@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-deep-slate: #0F172A;
+  --color-adventure-orange: #F97316;
+  --color-sky-blue: #0284C7;
+  --color-off-white: #F8FAFC;
+  --color-surface: #f7f9fb;
+  --color-surface-container: #F1F5F9;
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --shadow-level-1: 0 2px 4px rgba(15, 23, 42, 0.05);
+  --shadow-level-2: 0 4px 12px rgba(15, 23, 42, 0.1);
+  --shadow-level-3: 0 8px 24px rgba(15, 23, 42, 0.15);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+.dark {
+  --color-deep-slate: #F1F5F9;
+  --color-adventure-orange: #FB923C;
+  --color-sky-blue: #38BDF8;
+  --color-off-white: #020617;
+  --color-surface: #0F172A;
+  --color-surface-container: #1E293B;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  --shadow-level-1: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-level-2: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-level-3: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
